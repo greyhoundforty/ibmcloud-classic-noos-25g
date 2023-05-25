@@ -1,3 +1,13 @@
+variable "iaas_classic_api_key" {
+  description = "API key for IBM Cloud Classic Infrastructure"
+  type        = string
+}
+
+variable "iaas_classic_username" {
+  description = "Username for IBM Cloud Classic Infrastructure"
+  type        = string
+}
+
 variable "datacenter" {
   description = "Datacenter for bare metal server"
   type        = string
