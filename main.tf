@@ -36,11 +36,12 @@ resource "ibm_compute_bare_metal" "single_group" {
     "HARD_DRIVE_7_6TB_NVME_SSD_U_2",
     "HARD_DRIVE_7_6TB_NVME_SSD_U_2",
   ]
+  redundant_network = false
   hourly_billing         = false
   private_network_only   = false
   unbonded_network       = true
-  public_vlan_id         = "2998166"
-  private_vlan_id        = "2998168"
+  public_vlan_id         = data.ibm_network_vlan.public.id
+  private_vlan_id        = data.ibm_network_vlan.private.id
   tags                   = local.tags
   redundant_power_supply = true
 
